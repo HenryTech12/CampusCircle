@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: campuscircle
+      POSTGRES_PASSWORD: campuscircle
+      POSTGRES_DB: campuscircle
+    ports:
+      - "5432:5432"
+    volumes:
+      - campuscircle-postgres:/var/lib/postgresql/data
+volumes:
+  campuscircle-postgres:
